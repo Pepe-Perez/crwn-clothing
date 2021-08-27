@@ -34,9 +34,9 @@ class App extends React.Component {
             }
           });
         });
-      }else{
-        setCurrentUser({ currentUser: userAuth });
       }
+        setCurrentUser(userAuth);
+      
 
     });
 
@@ -47,6 +47,7 @@ class App extends React.Component {
   }
 
   render(){
+    console.log('entra');
     return (
       <div>
         <Header/>
@@ -77,5 +78,4 @@ const mapDismatchToProps = dispatch => ({
 
 export default connect(
   mapStateToProps, 
-  mapDismatchToProps)
-  (App);
+  mapDismatchToProps)(App);
